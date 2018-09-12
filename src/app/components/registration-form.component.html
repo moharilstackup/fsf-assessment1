@@ -12,11 +12,11 @@
 
         <div>
           <!-- <mat-form-field> -->
-            <label>Gender:    </label>
-            <mat-radio-group class="example-radio-group" name="gender" ngModel required fxLayoutGap="15px"> 
-              <mat-radio-button value="Male">Male</mat-radio-button>
-              <mat-radio-button value="Female">Female</mat-radio-button>
-            </mat-radio-group>
+          <label>Gender: </label>
+          <mat-radio-group class="example-radio-group" name="gender" ngModel required fxLayoutGap="15px">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+          </mat-radio-group>
           <!-- </mat-form-field> -->
         </div>
 
@@ -62,7 +62,7 @@
             <input matInput placeholder="Phone" name="phone" ngModel required pattern="(?=(?:\D*\d){7,}\D*$)[\+\d(]{1}[\d-() ]+">
             <mat-error>Min 7 digits, cannot contain invalid characters</mat-error>
           </mat-form-field>
-          
+
         </div>
         <div></div>
         <div>
@@ -88,14 +88,11 @@
           </mat-form-field>
         </div> -->
         <div>
-          <!-- <mat-form-field>
-            <input matInput placeholder="TermsTPL" name="terms" ngModel>
-          </mat-form-field> -->
           <mat-checkbox required name="confirm" ngModel>I confirm all data entered are correct</mat-checkbox>
         </div>
         <br>
         <div>
-          <!-- <button type="submit" mat-button mat-raised-button color="accent" [disabled]="taskForm.invalid"> -->
+
           <button type="submit" mat-button mat-raised-button color="accent" [disabled]="newAcctForm.invalid">Submit
           </button>
         </div>
