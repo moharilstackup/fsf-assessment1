@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 const MATERIAL = [
@@ -14,7 +15,8 @@ const MATERIAL = [
     MatFormFieldModule,
     MatSelectModule,
     MatMomentDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatCheckboxModule
     
 ];
 

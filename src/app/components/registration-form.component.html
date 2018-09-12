@@ -1,3 +1,102 @@
-<p>
-  registration-form works!
-</p>
+<div class="example-container">
+  <form #newAcctForm="ngForm" (ngSubmit)=newAcct()>
+    <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-around">
+      <div>
+        <!-- Start of column A-->
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Name" name="name" ngModel required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder="Gender" name="gender" ngModel>
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width">
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <!-- <mat-form-field>
+            <input matInput placeholder="Birthday" name="birthday" ngModel>
+          </mat-form-field> -->
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Address" name="address" ngModel required>
+          </mat-form-field>
+        </div>
+        <!-- Start of Row AA-->
+        <!-- //  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center"> -->
+
+
+        <!-- //</div> -->
+        <!-- End of Row AA-->
+        <!-- End of column A-->
+      </div>
+      <div>
+        <!-- Start of column B-->
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Email" name="email" ngModel type="email" required email>
+            <mat-error>Email eg. joe@sg.sg.com</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder="Country" name="country" ngModel>
+              <mat-option value="singapore">Singapore</mat-option>
+              <mat-option value="malaysia">Malaysia</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="PhoneTPL" name="phone" ngModel>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Password" name="password" type="password" ngModel required password minlength="5">
+            <mat-error>Enter valid password</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- <div>
+          <mat-form-field>
+            <input matInput placeholder="Username" name="username" ngModel required minlength="5" maxlength="25"
+              pattern="[A-Za-z0-9]+">
+            <mat-error>Only alphanumeric</mat-error>
+          </mat-form-field>
+        </div> -->
+
+
+        <!-- <div>
+          <mat-form-field>
+            <input matInput placeholder="Confirm Password" name="password2" type="password" ngModel>
+          </mat-form-field>
+        </div> -->
+        <div>
+          <!-- <mat-form-field>
+            <input matInput placeholder="TermsTPL" name="terms" ngModel>
+          </mat-form-field> -->
+          <mat-checkbox required name="confirm" ngModel>I confirm all data entered are correct</mat-checkbox>
+        </div>
+        <br>
+        <div>
+          <!-- <button type="submit" mat-button mat-raised-button color="accent" [disabled]="taskForm.invalid"> -->
+          <button type="submit" mat-button mat-raised-button color="accent" [disabled]="newAcctForm.invalid">Submit
+          </button>
+        </div>
+        <!-- End of column A-->
+
+      </div>
+    </div>
+
+  </form>
+</div>
