@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from '../account.service';
 
 @Component({
@@ -9,12 +10,23 @@ import { AccountService } from '../account.service';
 })
 export class RegistrationFormComponent implements OnInit {
 
+  today = new Date();
+  minAge = 18;
+  maxAge = 150;
+  // minDate = new Date(2000, 0, 1);
+  // maxDate = new Date(2020, 0, 1);
+  public minAgeDate = new Date(this.today.getFullYear() - this.minAge, this.today.getMonth(), this.today.getDate());
+  public maxAgeDate = new Date(this.today.getFullYear() - this.maxAge, this.today.getMonth(), this.today.getDate());
+  maxDate=this.minAgeDate;
+  minDate=this.maxAgeDate;
+
+
   @ViewChild ('newAcctForm')
   newAcctForm: NgForm;
 
   public accts = [];
 
-  constructor(private _accountService:AccountService) { }
+  constructor(private _accountService:AccountService, private router: Router ) { }
 
   ngOnInit() {
     // this.accts = this._accountService.getAccts();
@@ -35,6 +47,7 @@ export class RegistrationFormComponent implements OnInit {
     });
 
     this.newAcctForm.resetForm();
+    this.router.navigate(['/thankyou']);
   }
 
 }

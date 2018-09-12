@@ -10,7 +10,7 @@
         </div>
         <div>
           <mat-form-field>
-            <mat-select placeholder="Gender" name="gender" ngModel>
+            <mat-select placeholder="Gender" name="gender" ngModel required>
               <mat-option value="male">Male</mat-option>
               <mat-option value="female">Female</mat-option>
             </mat-select>
@@ -18,9 +18,12 @@
         </div>
         <div>
           <mat-form-field class="example-full-width">
-            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth">
+            <!-- <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth"> -->
+            <!-- <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth" [value]="date.value"> -->
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth" name="dob" required ngModel>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            <mat-error>User must be at least 18yrs old</mat-error>
           </mat-form-field>
           <!-- <mat-form-field>
             <input matInput placeholder="Birthday" name="birthday" ngModel>
@@ -28,7 +31,8 @@
         </div>
         <div>
           <mat-form-field>
-            <input matInput placeholder="Address" name="address" ngModel required>
+            <!-- <input matInput placeholder="Address" name="address" ngModel required> -->
+            <textarea matInput placeholder="Address" name="address" ngModel ></textarea>
           </mat-form-field>
         </div>
         <!-- Start of Row AA-->
