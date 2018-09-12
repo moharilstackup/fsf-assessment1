@@ -10,41 +10,43 @@ import { AccountService } from '../account.service';
 })
 export class RegistrationFormComponent implements OnInit {
 
+  //Date of birth related stuff
   today = new Date();
   minAge = 18;
   maxAge = 150;
   // minDate = new Date(2000, 0, 1);
   // maxDate = new Date(2020, 0, 1);
-  public minAgeDate = new Date(this.today.getFullYear() - this.minAge, this.today.getMonth(), this.today.getDate());
-  public maxAgeDate = new Date(this.today.getFullYear() - this.maxAge, this.today.getMonth(), this.today.getDate());
-  maxDate=this.minAgeDate;
-  minDate=this.maxAgeDate;
+  //public minAgeDate = new Date(this.today.getFullYear() - this.minAge, this.today.getMonth(), this.today.getDate());
+  //public maxAgeDate = new Date(this.today.getFullYear() - this.maxAge, this.today.getMonth(), this.today.getDate());
+  //maxDate = this.minAgeDate;
+  //minDate = this.maxAgeDate;
+  maxDate = new Date(this.today.getFullYear() - this.minAge, this.today.getMonth(), this.today.getDate());
+  minDate = new Date(this.today.getFullYear() - this.maxAge, this.today.getMonth(), this.today.getDate());
 
-
-  @ViewChild ('newAcctForm')
+  @ViewChild('newAcctForm')
   newAcctForm: NgForm;
 
   public accts = [];
 
-  constructor(private _accountService:AccountService, private router: Router ) { }
+  constructor(private _accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
     // this.accts = this._accountService.getAccts();
     this._accountService.getAccts()
-      .subscribe(data=>this.accts=data);
+      .subscribe(data => this.accts = data);
   }
 
   newAcct() {
     console.log("newAcct() : ")
     for (let i in this.newAcctForm.value) {
-      console.log('i=',i,' ,v=', this.newAcctForm.value[i]);
-    } 
+      console.log('i=', i, ' ,v=', this.newAcctForm.value[i]);
+    }
 
     this._accountService
-    .addAccount(this.newAcctForm.value)
-    .subscribe((result)=>{
-      console.log(result);
-    });
+      .addAccount(this.newAcctForm.value)
+      .subscribe((result) => {
+        console.log(result);
+      });
 
     this.newAcctForm.resetForm();
     this.router.navigate(['/thankyou']);

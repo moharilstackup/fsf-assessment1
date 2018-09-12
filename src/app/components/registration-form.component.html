@@ -8,19 +8,24 @@
             <input matInput placeholder="Name" name="name" ngModel required>
           </mat-form-field>
         </div>
+
+
         <div>
-          <mat-form-field>
-            <mat-select placeholder="Gender" name="gender" ngModel required>
-              <mat-option value="male">Male</mat-option>
-              <mat-option value="female">Female</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <!-- <mat-form-field> -->
+            <label>Gender:    </label>
+            <mat-radio-group class="example-radio-group" name="gender" ngModel required fxLayoutGap="15px"> 
+              <mat-radio-button value="Male">Male</mat-radio-button>
+              <mat-radio-button value="Female">Female</mat-radio-button>
+            </mat-radio-group>
+          <!-- </mat-form-field> -->
         </div>
+
         <div>
           <mat-form-field class="example-full-width">
             <!-- <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth"> -->
             <!-- <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth" [value]="date.value"> -->
-            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth" name="dob" required ngModel>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of birth" name="dob"
+              required ngModel>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error>User must be at least 18yrs old</mat-error>
@@ -32,7 +37,7 @@
         <div>
           <mat-form-field>
             <!-- <input matInput placeholder="Address" name="address" ngModel required> -->
-            <textarea matInput placeholder="Address" name="address" ngModel ></textarea>
+            <textarea matInput placeholder="Address" name="address" ngModel required></textarea>
           </mat-form-field>
         </div>
         <!-- Start of Row AA-->
@@ -53,7 +58,7 @@
         </div>
         <div>
           <mat-form-field>
-            <mat-select placeholder="Country" name="country" ngModel>
+            <mat-select placeholder="Country" name="country" ngModel required>
               <mat-option value="singapore">Singapore</mat-option>
               <mat-option value="malaysia">Malaysia</mat-option>
             </mat-select>
