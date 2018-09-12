@@ -8,12 +8,13 @@ import { PageNotFoundComponent } from './components/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AccountService } from './account.service'
 
 
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PageNotFoundComponent } from './components/page-not-found.component';
+
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { PageNotFoundComponent } from './components/page-not-found.component';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

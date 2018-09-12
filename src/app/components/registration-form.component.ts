@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-registration-form',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationFormComponent implements OnInit {
 
-  constructor() { }
+  public accts = [];
+
+  constructor(private _accountService:AccountService) { }
 
   ngOnInit() {
+    this.accts = this._accountService.getAccts();
   }
 
 }
