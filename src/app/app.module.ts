@@ -14,6 +14,7 @@ import { AccountService } from './account.service'
 
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -30,7 +31,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FormsModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

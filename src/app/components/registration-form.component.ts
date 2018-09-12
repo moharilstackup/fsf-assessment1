@@ -13,7 +13,10 @@ export class RegistrationFormComponent implements OnInit {
   constructor(private _accountService:AccountService) { }
 
   ngOnInit() {
-    this.accts = this._accountService.getAccts();
+    // this.accts = this._accountService.getAccts();
+
+    this._accountService.getAccts()
+      .subscribe(data=>this.accts=data);
   }
 
 }
