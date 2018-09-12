@@ -14,12 +14,6 @@ export class RegistrationFormComponent implements OnInit {
   today = new Date();
   minAge = 18;
   maxAge = 150;
-  // minDate = new Date(2000, 0, 1);
-  // maxDate = new Date(2020, 0, 1);
-  //public minAgeDate = new Date(this.today.getFullYear() - this.minAge, this.today.getMonth(), this.today.getDate());
-  //public maxAgeDate = new Date(this.today.getFullYear() - this.maxAge, this.today.getMonth(), this.today.getDate());
-  //maxDate = this.minAgeDate;
-  //minDate = this.maxAgeDate;
   maxDate = new Date(this.today.getFullYear() - this.minAge, this.today.getMonth(), this.today.getDate());
   minDate = new Date(this.today.getFullYear() - this.maxAge, this.today.getMonth(), this.today.getDate());
 
