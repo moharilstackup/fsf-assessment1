@@ -4,20 +4,32 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RegistrationFormComponent } from './components/registration-form.component';
 import { ThankyouComponent } from './components/thankyou.component';
+import { PageNotFoundComponent } from './components/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
+import { AppRoutingModule } from './/app-routing.module';
+
+
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { PageNotFoundComponent } from './components/page-not-found.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationFormComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    FlexLayoutModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
