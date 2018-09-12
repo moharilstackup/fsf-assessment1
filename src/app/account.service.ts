@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IAccount } from './account';
 import { Observable } from 'rxjs/Observable';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,10 @@ export class AccountService {
     //   {"name":"John Dee", "address":"jdee"},
     //   {"name":"Amber Koo", "address":"ake"}
     // ];
-
-
   }
+
+  addAccount(newAcct){
+    return this.http.post(`${environment.api_url}addAccount`, newAcct);
+  }
+
 }

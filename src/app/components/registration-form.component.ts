@@ -18,7 +18,6 @@ export class RegistrationFormComponent implements OnInit {
 
   ngOnInit() {
     // this.accts = this._accountService.getAccts();
-
     this._accountService.getAccts()
       .subscribe(data=>this.accts=data);
   }
@@ -29,6 +28,11 @@ export class RegistrationFormComponent implements OnInit {
       console.log('i=',i,' ,v=', this.newAcctForm.value[i]);
     } 
 
+    this._accountService
+    .addAccount(this.newAcctForm.value)
+    .subscribe((result)=>{
+      console.log(result);
+    });
 
     this.newAcctForm.resetForm();
   }
